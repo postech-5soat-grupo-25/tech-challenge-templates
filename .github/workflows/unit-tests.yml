@@ -1,6 +1,4 @@
 name: Unit Tests
-permissions:
-  checks: write
 
 on:
   workflow_call:
@@ -9,8 +7,7 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  test:
-    name: Check
+  Template:
     runs-on: ubuntu-latest
     
     steps:
