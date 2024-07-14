@@ -2,6 +2,9 @@ name: Code Quality
 
 on:
   workflow_call:
+    secrets:
+      sonarcloud_token:
+        required: true
 
 env:
   CARGO_TERM_COLOR: always
@@ -73,7 +76,7 @@ jobs:
       uses: sonarsource/sonarqube-scan-action@v2.3.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.sonarcloud_token }}
         SONAR_ORGANIZATION: ${{ env.SONAR_ORGANIZATION }}
         SONAR_PROJECT_KEY: ${{ env.SONAR_PROJECT_KEY }}
       with:

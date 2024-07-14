@@ -2,6 +2,9 @@ name: Code Coverage
 
 on:
   workflow_call:
+    secrets:
+      codecov_token:
+        required: true
 
 env:
   CARGO_TERM_COLOR: always
@@ -25,9 +28,9 @@ jobs:
           cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml --fail-under 50
 
       - name: Upload to codecov.io
-        uses: codecov/codecov-action@v1.0.2
+        uses: codecov/codecov-action@v4
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
+          token: ${{ secrets.codecov_token }}
 
       - name: Archive Results
         uses: actions/upload-artifact@v1
