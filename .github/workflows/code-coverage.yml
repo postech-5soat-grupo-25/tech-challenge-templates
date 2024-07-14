@@ -7,8 +7,7 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  check:
-    name: Check
+  Template:
     runs-on: ubuntu-latest
     
     container:
