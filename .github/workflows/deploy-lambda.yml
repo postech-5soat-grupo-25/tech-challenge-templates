@@ -33,4 +33,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Run Deployment Script
-        run: bash $${{ secrets.script }}
+        run: |
+            chmod +x ${{ secrets.script }}
+            ./${{ secrets.script }}
+        shell: bash
