@@ -5,6 +5,10 @@ on:
       secrets:
         script:
           required: true
+        aws_access_key_id:
+          required: true
+        aws_secret_access_key:
+          required: true
 
 jobs:
   deploy:
@@ -28,8 +32,8 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.aws_access_key_id }}
+          aws-secret-access-key: ${{ secrets.aws_secret_access_key }}
           aws-region: us-east-1
 
       - name: Run Deployment Script
