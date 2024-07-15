@@ -1,11 +1,10 @@
 name: Deploy Lambda Function
 
 on:
-  workflow_dispatch:
-    inputs:
-      script_name:
-        description: Deployment Script
-        required: true
+    workflow_call:
+      secrets:
+        script:
+          required: true
 
 jobs:
   deploy:
@@ -34,4 +33,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Run Deployment Script
-        run: bash ${{ github.event.inputs.script_name }}
+        run: bash $${{ secrets.script }}
