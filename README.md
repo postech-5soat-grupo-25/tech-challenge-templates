@@ -1,4 +1,4 @@
-# Templates | PosTech 5SOAT • Grupo 25
+# `templates` | PosTech 5SOAT • Grupo 25
 
 Este repositório contém templates para serem usados nos microserviços que compõem a solução do Tech Challenge. Os templates visam padronizar e facilitar a configuração de diferentes aspectos do nosso desenvolvimento, como integrações contínuas, cobertura de código etc.
 
