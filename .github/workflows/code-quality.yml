@@ -89,7 +89,7 @@ jobs:
           -Dsonar.externalIssuesReportPaths=sonar-issues.json
 
     - name: Archive Results
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v3
       with:
         name: code-quality-report
         path: sonar-issues.json

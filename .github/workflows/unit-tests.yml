@@ -41,7 +41,7 @@ jobs:
           summary: ${{ steps.report.outputs.summary }}
 
       - name: Archive Results
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: unit-tests-report
           path: results.json
